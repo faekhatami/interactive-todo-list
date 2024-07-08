@@ -1,0 +1,88 @@
+$app-bg-color: #f0f0f0;
+$primary-color: #333;
+$secondary-color: #ff6347;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $app-bg-color;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  button {
+    padding: 10px 20px;
+    background: $secondary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: darken($secondary-color, 10%);
+    }
+  }
+}
+
+.todo-list {
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    &.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+    span {
+      cursor: pointer;
+    }
+    button {
+      background: transparent;
+      border: none;
+      color: $secondary-color;
+      cursor: pointer;
+      &:hover {
+        color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: 90%;
+    padding: 10px;
+  }
+
+  form {
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+}
